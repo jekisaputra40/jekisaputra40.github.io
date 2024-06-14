@@ -1,0 +1,5 @@
+https://parvationline.com/main/admin/dashboard.php
+
+2024 inurl:/admin/login.php site:pk
+
+https://admbbs.bamdc.edu.pk/admin/dashboard.php
