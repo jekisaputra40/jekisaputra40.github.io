@@ -1,0 +1,8 @@
+If TextBox1.Text = "1905" Then
+Me.Close()
+Else
+MsgBox("sSlah")
+End If
+
+e.Cancel = True
+MsgBox("kKw bBsa kKlwar")
