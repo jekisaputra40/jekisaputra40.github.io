@@ -1,83 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="selamat datang di website defacer sungai lilin">
-    <meta name="keyword" content="defacer sungai lilin">
-    <meta property="og:title" content="defacer sungai lilin">
-    <meta property="og:image" content="https://g.top4top.io/p_3128qh0dz0.png">
-    <meta name="author" content="defacer sungai lilin" />
-    <link rel="icon" type="image/png" href="https://g.top4top.io/p_3128qh0dz0.png"/>
-    <link rel="stylesheet" href="style.css" />
-    <title>pPrtofolio</title>
-  </head>
-  <body>
-    <body align="center" oncontextmenu="return false" onclick="play()">
-  
-        <div class="flex-center position-ref full-height">
-      
-          <div class="content">
-            <div class="text">
-                  <audio id="sec" __idm_id__="823202817"> 		<source src="https://dpcrsgaillin.github.io/i.mp3" type="audio/mpeg"></audio> 
-                </font>
-              </center>
-            </div>
-        <script>
-        var x = document.getElementById("sec");
-        function play() {
-          x.play(); 	
-        }
-      </script>
-    <div class="container">
-      <div class="sidebar">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
         <nav>
-          <ul>
-            <li><a href="">tTg</a></li>
-            <li><a href="">pPrtoflio</a></li>
-            <li><a href="">Blog</a></li>
-            <li><a href="">kKtk</a></li>
-          </ul>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-      </div>
-      <main class="content">
-        <section class="hero">
-          <img src="online.png" alt="" />
-          <div class="hero-content">
-            <h1>Profesi</h1>
-            <br />
-            <h2>hHy gGuys</h2>
-            <br /><br />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, aperiam dolore
-              assumenda velit repellendus recusandae magni consectetur mollitia facere incidunt
-              inventore perspiciatis debitis doloribus ullam minima culpa voluptatem. Repellendus,
-              option.
-            </p>
-            <a href="" class="action-btn">Profile Saya</a>
-          </div>
-        </section>
-      </main>
-      <div class="footer">
-        <footer>
-          <ul>
-            <li>
-              <img src="instagram.png" alt="" /><a><p>Instagram</p></a>
-            </li>
-            <li>
-              <img src="facebook.png" alt="" /><a><p>Facebook</p></a>
-            </li>
-            <li>
-              <img src="twitter.png" alt="" /><a><p>Twitter</p></a>
-            </li>
-            <li>
-              <img src="telegram.png" alt="" /><a><p>Telegram</p></a>
-            </li>
-          </ul>
-        </footer>
-      </div>
-    </div>
-  </body>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I am a passionate web developer.</p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm [Your Name]. I specialize in building websites and web applications. I enjoy turning complex problems into simple, beautiful designs.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
