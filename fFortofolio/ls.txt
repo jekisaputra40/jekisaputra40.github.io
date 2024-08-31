@@ -4,3 +4,5 @@
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
+
+<meta name="author" content="Untree.co">
