@@ -1,0 +1,2 @@
+sed -i 's/prompt_symbol=㉿/prompt_symbol=💀/' ~/.zshrc
+source ~/.zshrc
