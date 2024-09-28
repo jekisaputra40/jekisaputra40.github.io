@@ -1,2 +1,5 @@
 sed -i 's/prompt_symbol=㉿/prompt_symbol=💀/' ~/.zshrc
 source ~/.zshrc
+
+https://youtu.be/PapaQAyfZ6U?si=Y6pndQ0vikJey9Xf
+https://youtu.be/PapaQAyfZ6U?si=Y6pndQ0vikJey9Xf
