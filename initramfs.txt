@@ -1,0 +1,2 @@
+fsck /dev/sda1 -y
+reboot -f
