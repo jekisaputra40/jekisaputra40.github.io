@@ -17,3 +17,7 @@ sqlmap -u "https://penaaspirasirakyatindonesia.com/berita_detail.php?id=186" --d
 
 https://idcloudhost.com/panduan/cara-membangun-web-server-di-ubuntu/
 https://idcloudhost.com/panduan/cara-membangun-web-server-di-ubuntu/
+
+pPrs
+https://youtube.com/shorts/5uRnBI8sL1I?si=AOYvX2h0fyGXKl21
+https://youtube.com/shorts/5uRnBI8sL1I?si=AOYvX2h0fyGXKl21
