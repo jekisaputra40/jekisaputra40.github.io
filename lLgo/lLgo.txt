@@ -23,6 +23,9 @@ https://github.com/0rbianta/WannaCry
 https://github.com/Zusyaku/Malware-Collection-Part-2/blob/main/Ransomware/WannaCry.exe
 https://github.com/Zusyaku/Malware-Collection-Part-2/blob/main/Ransomware/WannaCry.exe
 
+https://github.com/Zusyaku/Malware-Collection-Part-2/blob/main/Unlock%20Virus.txt
+https://github.com/Zusyaku/Malware-Collection-Part-2/blob/main/Unlock%20Virus.txt
+
 https://bootstrapmade.com/bootstrap-portfolio-templates
 https://bootstrapmade.com/bootstrap-portfolio-templates
 http://jekisaputra15.rf.gd
