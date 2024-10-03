@@ -32,6 +32,9 @@ https://github.com/Zusyaku/Malware-Collection-Part-2
 https://github.com/Zusyaku/Malware-Collection-Part-2
 https://github.com/Zusyaku/Malware-Collection-Part-2
 
+https://github.com/yukinime/Xmlrpc-wordpress-exploit
+https://github.com/yukinime/Xmlrpc-wordpress-exploit
+
 McAfee Security Scan Plus
 McAfee Security Scan Plus
 
