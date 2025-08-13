@@ -1,1 +1,1 @@
-
+jembot kau rontok
