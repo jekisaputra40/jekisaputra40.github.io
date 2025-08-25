@@ -1,1 +1,4 @@
 https://www.kapwing.com/folder/68abf7d51ab142b3256b7b8c
+
+
+tanda u dalam git dev Tanda -u adalah singkatan dari --set-upstream , yang menghubungkan cabang lokal Anda ke cabang jarak jauh.
