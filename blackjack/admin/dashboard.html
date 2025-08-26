@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Horor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: crimson;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 50px;
+      text-shadow: 0 0 20px red, 0 0 40px darkred;
+      animation: flicker 1.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0%   { opacity: 1; text-shadow: 0 0 10px red; }
+      50%  { opacity: 0.6; text-shadow: 0 0 40px crimson; }
+      100% { opacity: 1; text-shadow: 0 0 20px darkred; }
+    }
+    .warning {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #ff4444;
+      animation: glitch 2s infinite;
+    }
+    @keyframes glitch {
+      0% { transform: skew(0deg); }
+      20% { transform: skew(10deg); color: darkred; }
+      40% { transform: skew(-10deg); color: crimson; }
+      60% { transform: skew(5deg); }
+      80% { transform: skew(-5deg); }
+      100% { transform: skew(0deg); color: #ff4444; }
+    }
+    #jumpscare {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black url('https://i.ibb.co/6XbZzsb/scary-face.jpg') center/cover no-repeat;
+      z-index: 9999;
+    }
+    .logout-btn {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background: crimson;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px red;
+    }
+    .logout-btn:hover {
+      background: darkred;
+      box-shadow: 0 0 25px crimson;
+    }
+  </style>
+</head>
+<body>
+  <h1>☠ SELAMAT DATANG DI NERAKA DIGITAL ☠</h1>
+  <p class="warning">[!] Kamu sudah terjebak... Tidak ada jalan keluar...</p>
+
+  <!-- Tombol Logout -->
+  <button class="logout-btn" onclick="keluar()">Keluar</button>
+
+  <audio autoplay loop id="dashboardMusic">
+    <source src="https://www.fesliyanstudios.com/play-mp3/6666" type="audio/mpeg">
+  </audio>
+  <audio id="scream">
+    <source src="https://www.fesliyanstudios.com/play-mp3/4385" type="audio/mpeg">
+  </audio>
+
+  <div id="jumpscare"></div>
+
+  <script>
+    // setelah 5 detik munculin jumpscare
+    setTimeout(function() {
+      document.getElementById("jumpscare").style.display = "block";
+      document.getElementById("scream").play();
+    }, 5000);
+
+    function keluar() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

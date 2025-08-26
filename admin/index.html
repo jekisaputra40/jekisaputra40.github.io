@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Horor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: red;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px red;
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid red;
+      border-radius: 6px;
+      background: black;
+      color: red;
+    }
+    button {
+      padding: 10px 20px;
+      background: crimson;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkred;
+    }
+    #pesan {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #ff4444;
+    }
+  </style>
+</head>
+<body>
+  <!-- Halaman Login -->
+  <div class="box" id="loginBox">
+    <h2>Login Panel</h2>
+    <input type="text" id="username" placeholder="Username" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
+    <button onclick="login()">Masuk</button>
+    <p id="pesan"></p>
+    <!-- Musik login -->
+    <audio id="loginMusic" autoplay loop>
+      <source src="https://www.fesliyanstudios.com/play-mp3/6531" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function login() {
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+      let pesan = document.getElementById("pesan");
+
+      if (user === "'or 1=1 limit-- -+" && pass === "'or 1=1 limit-- -+") {
+        // stop musik login
+        document.getElementById("loginMusic").pause();
+        document.getElementById("loginMusic").currentTime = 0;
+
+        // arahkan ke halaman dashboard.html
+        window.location.href = "dashboard.html";
+      } else {
+        pesan.innerHTML = "[x] Username atau Password salah!";
+      }
+    }
+  </script>
+</body>
+</html>
