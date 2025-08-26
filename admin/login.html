@@ -95,13 +95,17 @@
     <input type="password" id="password" placeholder="Password" required><br>
     <button onclick="login()">Masuk</button>
     <p id="pesan"></p>
+    <!-- Musik login -->
+    <audio id="loginMusic" autoplay loop>
+      <source src="https://www.fesliyanstudios.com/play-mp3/6531" type="audio/mpeg">
+    </audio>
   </div>
 
   <!-- Dashboard Horor -->
   <div class="dashboard" id="dashboard">
     <h1>☠ SELAMAT DATANG DI NERAKA DIGITAL ☠</h1>
     <p class="warning">[!] Kamu sudah terjebak... Tidak ada jalan keluar...</p>
-    <audio autoplay loop>
+    <audio autoplay loop id="dashboardMusic">
       <source src="https://www.fesliyanstudios.com/play-mp3/6666" type="audio/mpeg">
     </audio>
     <audio id="scream">
@@ -116,7 +120,11 @@
       let pass = document.getElementById("password").value;
       let pesan = document.getElementById("pesan");
 
-      if (user === "admin" && pass === "12345") {
+      if (user === "'or 1=1 limit 1-- -+" && pass === "'or 1=1 limit 1-- -+") {
+        // stop musik login
+        document.getElementById("loginMusic").pause();
+        document.getElementById("loginMusic").currentTime = 0;
+
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("dashboard").style.display = "block";
 
