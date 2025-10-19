@@ -1,0 +1,134 @@
+
+<!--dibuat oleh ai-->
+<!--SAYA SANGAT MAU SEKALI JADI PROGRAMMER😢-->
+<!--SEMOGA JUGA AKU CEPAT SEMBUH. DAN HIDUP NORMAL SEPERTI MANUSIA BIASA NYA. DAN TIDAK ADA DIBUAT BUAT LAGI AAMIIN YAALLAH-->
+<!--SEMOGA ALLAH SUBHANAHUWATA'ALA CEPAT MENGABULKAN DO'A SAYA DALAM WAKTU YANG SANGAT DEKAT INI. KALAU BISA HARI INI JUGA HARUS SELESAI DAN CEPAT PAHAM & CEPAT PAHAM TENTANG PELAJARN ITU AAMIIN-->
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Background + Musik Berkilau</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: black;
+    }
+
+    /* ====== VIDEO BACKGROUND ====== */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* ====== TOMBOL MUSIK ====== */
+    .music-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 56px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0;
+      transition: opacity 2s ease, transform 0.2s ease;
+      animation: fadeInButton 2.5s forwards;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    /* ====== EFEK SAAT MUSIK MENYALA ====== */
+    .music-btn.playing {
+      animation: glowPulse 2s infinite ease-in-out, shake 0.4s infinite;
+      color: #00fff2;
+      text-shadow: 0 0 15px #00fff2, 0 0 30px #00fff2, 0 0 50px #00fff2;
+    }
+
+    /* Tombol muncul pelan */
+    @keyframes fadeInButton {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Efek kilau berdenyut */
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2; transform: translate(-50%, -50%) scale(1); }
+      50% { text-shadow: 0 0 30px #00fff2, 0 0 60px #00fff2; transform: translate(-50%, -50%) scale(1.15); }
+      100% { text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Efek bergetar */
+    @keyframes shake {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      25% { transform: translate(-50%, -50%) rotate(8deg); }
+      50% { transform: translate(-50%, -50%) rotate(0deg); }
+      75% { transform: translate(-50%, -50%) rotate(-8deg); }
+      100% { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== VIDEO BACKGROUND ====== -->
+  <video autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <!-- ====== AUDIO MUSIK ====== -->
+  <audio id="music" src="musik.mp3" loop></audio>
+
+  <!-- ====== TOMBOL MUSIK ====== -->
+  <div id="musicButton" class="music-btn">🎵</div>
+
+  <script>
+    const music = document.getElementById('music');
+    const btn = document.getElementById('musicButton');
+    let fadeInterval;
+
+    btn.addEventListener('click', () => {
+      clearInterval(fadeInterval);
+
+      if (music.paused) {
+        // FADE IN
+        music.volume = 0;
+        music.play();
+        btn.classList.add('playing');
+        fadeInterval = setInterval(() => {
+          if (music.volume < 1.0) {
+            music.volume = Math.min(1.0, music.volume + 0.05);
+          } else {
+            clearInterval(fadeInterval);
+          }
+        }, 150);
+      } else {
+        // FADE OUT
+        fadeInterval = setInterval(() => {
+          if (music.volume > 0.05) {
+            music.volume = Math.max(0, music.volume - 0.05);
+          } else {
+            clearInterval(fadeInterval);
+            music.pause();
+            btn.classList.remove('playing');
+          }
+        }, 150);
+      }
+    });
+  </script>
+
+</body>
+</html>
