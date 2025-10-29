@@ -1,0 +1,9 @@
+ <section id="fitur" class="card">
+      <h2>Fitur</h2>
+      <ul class="features">
+        <li>Dark theme elegan dengan soft glow</li>
+        <li>Responsive total + burger menu untuk HP</li>
+        <li>Ringan: hanya HTML, CSS, JS kecil</li>
+        <li>Struktur siap-deploy (GitHub Pages / Netlify)</li>
+      </ul>
+    </section>
