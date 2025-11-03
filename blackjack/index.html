@@ -1,32 +1,106 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full-screen Responsive Background</title>
+  <style>
+    /* Reset dasar */
+    *{box-sizing: border-box;margin:0;padding:0}
+    html,body{height:100%;}
 
-.bg {
-  /* The image used */
-  background-image: url("kom.jpg");
+    /* Kontainer halaman */
+    .page{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:#fff;
+    }
 
-  /* Full height */
-  height: 100%; 
+    /* Cara 1: tag <img> full-screen (recommended untuk akses & srcset) */
+    .bg-img{
+      position:absolute;
+      inset:0; /* top:0;right:0;bottom:0;left:0 */
+      width:100%;
+      height:100%;
+      object-fit:cover; /* menjaga proporsi dan memenuhi layar */
+      object-position:center center;
+      z-index:-2; /* di belakang konten */
+      display:block;
+    }
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
+    /* Overlay gelap tipis agar teks tetap terbaca */
+    .overlay{
+      position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,0.35);
+    }
+
+    /* Konten yang berada di atas background */
+    .content{
+      position:relative;
+      z-index:1;
+      min-height:100vh; /* biar konten bisa center vertikal */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:2rem;
+    }
+
+    h1{font-size:clamp(1.5rem,4vw,3rem);letter-spacing:0.02em}
+    p{font-size:clamp(1rem,2.2vw,1.25rem);opacity:0.95}
+
+    /* Responsif contoh tombol */
+    .btn{
+      display:inline-block;padding:0.65rem 1rem;margin-top:1rem;border-radius:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,0.12);backdrop-filter:blur(4px);
+    }
+
+    /* Fallback untuk browser lama: gunakan background-image pada body jika object-fit tidak didukung */
+    @supports not (object-fit:cover){
+      .bg-img{display:none}
+      .page{background-size:cover;background-position:center center;background-repeat:no-repeat}
+    }
+
+    /* Contoh layout lain (opsional): header fixed */
+    header{position:fixed;left:16px;top:16px;z-index:2}
+    header a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:700}
+  </style>
 </head>
 <body>
+  <div class="page">
+    <!-- Ganti URL di src/srcset dengan file gambarmu. srcset memberi browser pilihan resolusi. -->
+    <img
+      class="bg-img"
+      src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop"
+      srcset="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=640&auto=format&fit=crop 640w,
+              https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1024&auto=format&fit=crop 1024w,
+              https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop 1600w,
+              https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2400&auto=format&fit=crop 2400w"
+      sizes="100vw"
+      alt="Background full-screen yang responsif"
+      loading="eager"
+    />
 
-<div class="bg"></div>
+    <!-- overlay untuk membuat teks lebih terbaca -->
+    <div class="overlay" aria-hidden="true"></div>
 
-<p>binatang.kau</p>
+    <!-- contoh header kecil -->
+    <header><a href="#">Logo</a></header>
 
+    <!-- Konten utama -->
+    <main class="content">
+      <div>
+        <h1>Judul Besar di Atas Foto</h1>
+        <p>Contoh teks yang tetap terbaca karena ada overlay. Ganti konten ini sesuai kebutuhan.</p>
+        <a class="btn" href="#">Aksi</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Catatan singkat:
+       - Untuk performa di produksi: gunakan gambar yang dioptimalkan, lazy-loading untuk gambar non-hero,
+         dan pertimbangkan format modern (AVIF/WebP) serta CDN.
+       - Jika ingin beberapa slide (carousel), beri tahu aku dan aku tambahkan versi JS ringan.
+  -->
 </body>
 </html>
