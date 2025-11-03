@@ -1,51 +1,32 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fullscreen Responsive Image</title>
-  <!--
-    Cara pakai: ganti "image.jpg" dengan path/URL gambarmu.
-    File ini akan menampilkan satu gambar fullscreen dan responsif.
-  -->
-  <style>
-    /* Reset singkat */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-    /* Container full screen */
-    .hero{
-      width:100vw;
-      height:100vh; /* penuh layar */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background-color:#000; /* fallback warna saat gambar belum dimuat */
-      overflow:hidden;
-    }
+.bg {
+  /* The image used */
+  background-image: url("kom.jpg");
 
-    /* Gambar responsive: memenuhi layar, tetap proporsional */
-    .hero img{
-      width:100%;
-      height:100%;
-      object-fit:cover; /* cover menjaga rasio dan mengisi area */
-      object-position:center center;
-      display:block;
-    }
+  /* Full height */
+  height: 100%; 
 
-    /* Optional: jangan tampilkan scrollbar saat animasi/perubahan ukuran */
-    ::-webkit-scrollbar{display:none}
-  </style>
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 
-  <!-- Ganti src dengan nama file gambarmu (bisa URL juga) -->
-  <div class="hero">
-    <img src="kom.jpg" alt="Gambar fullscreen responsif" />
-  </div>
+<div class="bg"></div>
 
-  <!-- Jika mau, bisa tambahkan atribut loading="lazy" pada <img> untuk tunda pemuatan di koneksi lambat -->
-  <!-- <img src="image.jpg" loading="lazy" alt="..."> -->
+<p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
 
 </body>
 </html>
