@@ -1,69 +1,32 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Background Foto Responsif</title>
-  <style>
-    /* Reset singkat */
-    html,body{height:100%;margin:0}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-    /* Container yang menampilkan gambar sebagai background full-screen */
-    .bg{
-      position:fixed;       /* agar selalu full-screen dan tidak bergeser */
-      inset:0;              /* top:0; right:0; bottom:0; left:0 */
-      background-image: url('your-image.jpg'); /* ganti path ini dengan gambarmu */
-      background-size: cover;      /* membuat gambar memenuhi layar proporsional */
-      background-position: center; /* pusatkan gambar */
-      background-repeat: no-repeat;
-      -webkit-backface-visibility: hidden; /* performa di mobile */
-      will-change: transform;
-    }
+.bg {
+  /* The image used */
+  background-image: url("kom.jpg");
 
-    /* Jika ingin menampilkan konten di atas background, gunakan .content */
-    .content{
-      position:relative;
-      z-index:1;
-      min-height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:rgba(255,255,255,0.95);
-      font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      text-shadow:0 1px 4px rgba(0,0,0,0.5);
-    }
+  /* Full height */
+  height: 100%; 
 
-    /* Contoh teks kecil di sudut untuk instruksi (bisa dihapus) */
-    .hint{
-      position:fixed;
-      left:12px;
-      bottom:12px;
-      font-size:12px;
-      color:rgba(255,255,255,0.85);
-      z-index:2;
-      background:rgba(0,0,0,0.25);
-      padding:6px 8px;
-      border-radius:8px;
-      backdrop-filter: blur(4px);
-    }
-
-    /* Responsif: untuk layar sangat kecil, ubah posisi fokus jika perlu */
-    @media (max-width:420px){
-      .bg{background-position: center top}
-      .hint{font-size:11px;padding:5px 7px}
-    }
-  </style>
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
-  <!-- Elemen .bg hanya menampilkan foto sebagai background full-viewport -->
-  <div class="bg" aria-hidden="true"></div>
 
-  <!-- Jika kamu tidak mau teks apa pun, hapus elemen .content dan .hint -->
-  <main class="content" role="main">
-    <!-- Contoh: kosongkan atau tampilkan logo kecil -->
-    <h1 style="display:none">Background Responsif</h1>
-  </main>
+<div class="bg"></div>
 
-  <div class="hint">Ganti <code>kom.jpg</code> dengan path gambarmu</div>
+<p>binatang.kau</p>
+
 </body>
 </html>
