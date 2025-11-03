@@ -3,104 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Full-screen Responsive Background</title>
+  <title>Fullscreen Responsive Image</title>
+  <!--
+    Cara pakai: ganti "image.jpg" dengan path/URL gambarmu.
+    File ini akan menampilkan satu gambar fullscreen dan responsif.
+  -->
   <style>
-    /* Reset dasar */
-    *{box-sizing: border-box;margin:0;padding:0}
+    /* Reset singkat */
+    *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%;}
 
-    /* Kontainer halaman */
-    .page{
-      position:relative;
-      min-height:100vh;
-      overflow:hidden;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      color:#fff;
-    }
-
-    /* Cara 1: tag <img> full-screen (recommended untuk akses & srcset) */
-    .bg-img{
-      position:absolute;
-      inset:0; /* top:0;right:0;bottom:0;left:0 */
-      width:100%;
-      height:100%;
-      object-fit:cover; /* menjaga proporsi dan memenuhi layar */
-      object-position:center center;
-      z-index:-2; /* di belakang konten */
-      display:block;
-    }
-
-    /* Overlay gelap tipis agar teks tetap terbaca */
-    .overlay{
-      position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,0.35);
-    }
-
-    /* Konten yang berada di atas background */
-    .content{
-      position:relative;
-      z-index:1;
-      min-height:100vh; /* biar konten bisa center vertikal */
+    /* Container full screen */
+    .hero{
+      width:100vw;
+      height:100vh; /* penuh layar */
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      padding:2rem;
+      background-color:#000; /* fallback warna saat gambar belum dimuat */
+      overflow:hidden;
     }
 
-    h1{font-size:clamp(1.5rem,4vw,3rem);letter-spacing:0.02em}
-    p{font-size:clamp(1rem,2.2vw,1.25rem);opacity:0.95}
-
-    /* Responsif contoh tombol */
-    .btn{
-      display:inline-block;padding:0.65rem 1rem;margin-top:1rem;border-radius:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,0.12);backdrop-filter:blur(4px);
+    /* Gambar responsive: memenuhi layar, tetap proporsional */
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover; /* cover menjaga rasio dan mengisi area */
+      object-position:center center;
+      display:block;
     }
 
-    /* Fallback untuk browser lama: gunakan background-image pada body jika object-fit tidak didukung */
-    @supports not (object-fit:cover){
-      .bg-img{display:none}
-      .page{background-size:cover;background-position:center center;background-repeat:no-repeat}
-    }
-
-    /* Contoh layout lain (opsional): header fixed */
-    header{position:fixed;left:16px;top:16px;z-index:2}
-    header a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:700}
+    /* Optional: jangan tampilkan scrollbar saat animasi/perubahan ukuran */
+    ::-webkit-scrollbar{display:none}
   </style>
 </head>
 <body>
-  <div class="page">
-    <!-- Ganti URL di src/srcset dengan file gambarmu. srcset memberi browser pilihan resolusi. -->
-    <img
-      class="bg-img"
-      src="https://jekisaputra40.github.io/blackjack/kom.jpg"
-      srcset="https://jekisaputra40.github.io/blackjack/kom.jpg 640w,
-              https://jekisaputra40.github.io/blackjack/kom.jpg 1024w,
-              https://jekisaputra40.github.io/blackjack/kom.jpg 1600w,
-              https://jekisaputra40.github.io/blackjack/kom.jpg 2400w"
-      sizes="100vw"
-      alt="Background full-screen yang responsif"
-      loading="eager"
-    />
 
-    <!-- overlay untuk membuat teks lebih terbaca -->
-    <div class="overlay" aria-hidden="true"></div>
-
-    <!-- contoh header kecil -->
-    <header><a href="#">Logo</a></header>
-
-    <!-- Konten utama -->
-    <main class="content">
-      <div>
-        <h1>Judul Besar di Atas Foto</h1>
-        <p>Contoh teks yang tetap terbaca karena ada overlay. Ganti konten ini sesuai kebutuhan.</p>
-        <a class="btn" href="#">Aksi</a>
-      </div>
-    </main>
+  <!-- Ganti src dengan nama file gambarmu (bisa URL juga) -->
+  <div class="hero">
+    <img src="kom.jpg" alt="Gambar fullscreen responsif" />
   </div>
 
-  <!-- Catatan singkat:
-       - Untuk performa di produksi: gunakan gambar yang dioptimalkan, lazy-loading untuk gambar non-hero,
-         dan pertimbangkan format modern (AVIF/WebP) serta CDN.
-       - Jika ingin beberapa slide (carousel), beri tahu aku dan aku tambahkan versi JS ringan.
-  -->
+  <!-- Jika mau, bisa tambahkan atribut loading="lazy" pada <img> untuk tunda pemuatan di koneksi lambat -->
+  <!-- <img src="image.jpg" loading="lazy" alt="..."> -->
+
 </body>
 </html>
