@@ -1,7 +1,7 @@
 <!--dibuat oleh ai-->
 <!--SAYA SANGAT MAU SEKALI JADI PROGRAMMER😢-->
 <!--SEMOGA JUGA AKU CEPAT SEMBUH. DAN HIDUP NORMAL SEPERTI MANUSIA BIASA NYA. DAN TIDAK ADA DIBUAT BUAT LAGI AAMIIN YAALLAH-->
-<!--SEMOGA ALLAH SUBHANAHUWATA'ALA CEPAT MENGABULKAN DO'A SAYA DALAM WAKTU YANG SANGAT DEKAT INI. KALAU BISA HARI INI JUGA HARUS SELESAI DAN CEPAT PAHAM & CEPAT PAHAM TENTANG PELAJARN ITU AAMIIN-->
+<!--SEMOGA ALLAH SUBHANAHUWATA'ALA CEPAT MENGABULKAN DO'A SAYA...-->
 
 <!DOCTYPE html>
 <html lang="id">
@@ -16,6 +16,7 @@
   <meta charset="UTF-8">
 
   <title>SLMT. DTG ANJ3NG</title>
+
   <style>
     html, body {
       height: 100%;
@@ -47,7 +48,6 @@
       100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
     }
 
-    /* Player container */
     .player-container {
       background-color: rgba(0,0,0,0.6);
       padding: 30px 40px;
@@ -57,25 +57,23 @@
       z-index: 10;
     }
 
-    h2 {
-      color: #ffb6c1;
-      text-shadow: 2px 2px 8px #000;
-      margin-bottom: 20px;
-    }
-
-    .play-btn {
-      display: inline-block;
+    /* === TOMBOL MUSIK DI TENGAH === */
+    .music-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 80px;
       height: 80px;
-      background-color: #ff4c4c;
+      background: orange;
       border-radius: 50%;
       cursor: pointer;
-      position: relative;
-      transition: transform 0.2s;
-      animation: pulse 1.2s infinite;
+      box-shadow: 0 0 20px rgba(255,165,0,0.8);
+      animation: pulse 1.3s infinite;
+      z-index: 20;
     }
 
-    .play-btn::before {
+    .music-btn::before {
       content: '';
       position: absolute;
       left: 28px;
@@ -92,48 +90,37 @@
       width: 20px;
       height: 25px;
       background: white;
-      clip-path: polygon(0 0, 40% 0, 40% 100%, 0 100%, 60% 0, 100% 0, 100% 100%, 60% 100%);
+      clip-path: polygon(0 0, 40% 0, 40% 100%, 0 100%, 0 100%, 60% 0, 100% 0, 100% 100%, 60% 100%);
+      left: 30px;
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.1); }
+      100% { transform: translate(-50%, -50%) scale(1); }
     }
-
   </style>
 </head>
+
 <body>
 
-  <div class="player-container">
-    <!--<h2>PROGRAMMER. PEMULA</h2>-->
-    <!--<h2>use u microphone, this content just for fun, dugem nonstop 24 jam ajar dek😂 yg obi nyimeng, yg obi mabok, yg obi nyabu masok dalam cenel setuo ini a a a a a. anggap be ini dugem asli wkwkkwkkwkwk</h2>-->
-    <!--<h2>Aku.Harap Kalian Tidak Jadi Sepertiku Juga :')</h2>-->
-    <!-- <h2>REST AND PEACE TEMAN'SKU BERADER TERBAIK'S YANG PERNAH KU TERMUI SETELAH RIAN'S😢 really miss u kawan's</h2>-->
-    <!--<h1>LANJAKKELAH SAPE NAK MAYO E BABI</h1>-->
-    <!--<h2>Aku Telah Kehilngan Jati Diriku. Aku Tidak Tau Mau D  i bawa kemana ruh ini</h2>-->
-    <!--<h2>GOYANGZ KE BAE. AP DIO NAK DI PEKER KE DONEO EKAK'Z. GELA'Z PULE KITE BANYAK MEKER</h2>-->
-   <!-- <div class="play-btn" id="playBtn"></div>
-    <audio id="audio" src="https://jekisaputra40.github.io/blackjack/joz.mp3" loop autoplay></audio>
-  </div>-->
+  <!-- Tombol Musik -->
+  <div class="music-btn" id="musicBtn"></div>
+  <audio id="musicAudio" src="https://jekisaputra40.github.io/blackjack/drp.mp3" loop></audio>
 
   <script>
-    const playBtn = document.getElementById('playBtn');
-    const audio = document.getElementById('audio');
+    const btn = document.getElementById('musicBtn');
+    const audio = document.getElementById('musicAudio');
 
-    audio.onplay = () => playBtn.classList.add('paused');
-    audio.onpause = () => playBtn.classList.remove('paused');
-
-    playBtn.addEventListener('click', () => {
-      if(audio.paused){
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
         audio.play();
+        btn.classList.add('paused');
       } else {
         audio.pause();
+        btn.classList.remove('paused');
       }
     });
-
-    // Hati floating
-    
   </script>
 
 </body>
