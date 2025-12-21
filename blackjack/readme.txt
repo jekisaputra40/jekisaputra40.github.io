@@ -1,1 +1,0 @@
-mMmek. mMmak. kKw. bBnyak. dDaki. wWkwwkwwwkkwk
