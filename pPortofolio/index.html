@@ -1,122 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="selamat datang di website defacer sungai lilin">
-  <meta name="keyword" content="defacer sungai lilin">
-  <meta property="og:title" content="pPrtflo">
-  <meta property="og:image" content="https://g.top4top.io/p_3128qh0dz0.png">
-  <meta name="author" content="defacer sungai lilin" />
-  <link rel="icon" type="image/png" href="https://g.top4top.io/p_3128qh0dz0.png"/>
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teks Seram di Tengah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000; /* Hitam pekat */
+            color: #ff0000; /* Merah terang */
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .teks-seram {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000,
+                0 0 40px #ff0000;
+            animation: berkedip 3s infinite alternate;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .teks-kedua {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 
+                0 0 5px #ff0000,
+                0 0 15px #ff0000;
+            opacity: 0.9;
+        }
+
+        /* Efek kedip */
+        @keyframes berkedip {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 
+                    0 0 10px #ff0000,
+                    0 0 20px #ff0000,
+                    0 0 30px #ff0000,
+                    0 0 40px #ff0000;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.5;
+            }
+        }
+
+        /* Efek latar belakang tambahan */
+        .efek-latar {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 0, 0, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        /* Efek partikel merah */
+        .partikel {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: rgba(255, 0, 0, 0.7);
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.7);
+            animation: jatuh 5s infinite linear;
+            z-index: 2;
+        }
+
+        @keyframes jatuh {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Responsif untuk perangkat kecil */
+        @media (max-width: 768px) {
+            .teks-seram {
+                font-size: 3rem;
+            }
+            
+            .teks-kedua {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .teks-seram {
+                font-size: 2.2rem;
+            }
+            
+            .teks-kedua {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <body align="center" oncontextmenu="return false" onclick="play()">
-  
-    <div class="flex-center position-ref full-height">
-  
-      <div class="content">
-        <div class="text">
-              <audio id="sec" __idm_id__="823202817"> 		<source src="https://jekisaputra40.github.io/pPortofolio/ns.mp3" type="audio/mpeg"></audio> 
-            </font>
-          </center>
-        </div>
+    <div class="efek-latar"></div>
+    
+    <div class="container">
+        <div class="teks-seram">sSystem. fFailur.~~</div>
+        <div class="teks-kedua">Jangan Dibuka</div>
+    </div>
+
     <script>
-    var x = document.getElementById("sec");
-    function play() {
-      x.play(); 	
-    }
-  </script>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">rRm</a></li>
-                <li><a href="#about">tTg sSya</a></li>
-                <li><a href="#projects">pPry</a></li>
-                <li><a href="#contact">kKtk</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <a href="#projects" class="btn">lLyat pPry</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>tTg sSy</h2>
-        <p>tTg sSy</p>
-    </section>
-
-    <section id="projects">
-        <h2>pPry</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="https://jekisaputra40.github.io/pPortofolio/h.jpeg" alt="Project 1">
-                <h3>pPry 1</h3>
-                <p>dDskrs dDri pPry 1</p>
-                <a href="#" class="btn">lLyat dDtil</a>
-            </div>
-
-            <div class="project-card">
-                <img src="https://jekisaputra40.github.io/pPortofolio/r.jpg" alt="Project 1">
-                <h3>pPry 1</h3>
-                <p>dDskrs dDri pPry 1</p>
-                <a href="#" class="btn">lLyat dDtil</a>
-            </div>
-
-            <div class="project-card">
-                <img src="https://jekisaputra40.github.io/pPortofolio/m.jpg" alt="Project 1">
-                <h3>pPry 1</h3>
-                <p>dDskrs dDri pPry 1</p>
-                <a href="#" class="btn">lLyat dDtil</a>
-            </div>
-
-            <div class="project-card">
-                <img src="https://jekisaputra40.github.io/pPortofolio/aa.jpg" alt="Project 2">
-                <h3>pPry 2</h3>
-                <p>dDskrs dDri pPry 2</p>
-                <a href="#" class="btn">lLyat dDtil</a>
-            </div>
-
-            <div class="project-card">
-                <iframe width="350" height="330" src="https://www.youtube.com/embed/lXlHgGtpO3s?si=SBW3zPWr5BxB_9ja">
-                </iframe>
-                <a href="https://youtu.be/lXlHgGtpO3s?si=Twpwh529eE6X-jAZ" class="btn">lLyat dDtil</a>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>kKtk sSy</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit" class="btn">kKrm</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 jJki</p>
-        <div class="bar left img-container">
-            <div class="img-content">
-                <img src="https://jekisaputra40.github.io/pPortofolio/in.jpg" alt="youtube height="40" width="40" id="left-youtube">
-            </div>
-    </footer>
-
-    <script src="script.js"></script>
+        // Menambahkan partikel merah untuk efek tambahan
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const jumlahPartikel = 50;
+            
+            for (let i = 0; i < jumlahPartikel; i++) {
+                const partikel = document.createElement('div');
+                partikel.classList.add('partikel');
+                
+                // Posisi acak
+                const kiri = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const durasi = 3 + Math.random() * 4;
+                
+                partikel.style.left = `${kiri}%`;
+                partikel.style.animationDelay = `${delay}s`;
+                partikel.style.animationDuration = `${durasi}s`;
+                
+                body.appendChild(partikel);
+            }
+            
+            // Efek suara (opsional, dikomentari agar tidak otomatis)
+            /*
+            const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-horror-laugh-428.mp3');
+            audio.volume = 0.3;
+            setTimeout(() => {
+                audio.play();
+            }, 1000);
+            */
+        });
+    </script>
 </body>
 </html>
